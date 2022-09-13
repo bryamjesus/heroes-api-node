@@ -1,3 +1,5 @@
+const fs = require('fs')
+
 const lista = [
   { id: 1, nombre: "SuperMan", img: "superman.png" },
   { id: 2, nombre: "Shazam", img: "shazam.jpg" },
@@ -16,8 +18,10 @@ const listOneHero = (id) => {
   return hero;
 }
 
-const createHero = (datos) => {
-  const heroe = { id: nextId, ...datos }
+const createHero = ({ nombre, img, base64 }) => {
+  const buffer = Buffer.from(base64, "base64");
+  fs.writeFileSync('./src/public/img/' + img, buffer)
+  const heroe = { id: nextId, nombre, img }
   lista.push(heroe);
   nextId++
   return heroe
