@@ -9,7 +9,7 @@ router.get('/', (require, response) => {
 
 router.get('/:id', (require, response) => {
   const id = require.params.id;
-  response.json(controller.listOneHero())
+  response.json(controller.listOneHero(id))
 })
 
 router.post('/', (require, response) => {

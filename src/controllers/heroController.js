@@ -31,11 +31,13 @@ const editHero = (id, changes) => {
     return
   }
   const updateHero = {
-    ...lista[indexEdit],
+    ...lista[indexHero],
     ...changes,
   }
 
-  return hero;
+  lista[indexHero] = updateHero;
+
+  return updateHero;
 }
 
 const deleteHero = (id) => {
@@ -45,7 +47,7 @@ const deleteHero = (id) => {
     return
   }
 
-  lista.splice(indexBook, 1)
+  lista.splice(indexHero, 1)
   return ({ mensaje: 'Libro eliminado' })
 }
 
