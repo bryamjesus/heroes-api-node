@@ -1,1 +1,1 @@
-# heroes-api-node
+# Heroes API
