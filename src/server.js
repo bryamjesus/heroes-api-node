@@ -4,7 +4,11 @@ const ruteHero = require('./routes/heroRoutes')
 const app = express();
 const PORT = 3000;
 
-app.use(express.json());
+app.use(express.json({
+  limit: '2mb',
+}));
+
+app.use(express.static('./public'))
 
 app.use('/hero', ruteHero)
 

@@ -1,4 +1,4 @@
-let lista = [
+const lista = [
   { id: 1, nombre: "SuperMan", img: "superman.png" },
   { id: 2, nombre: "Shazam", img: "shazam.jpg" },
 ];
@@ -16,14 +16,12 @@ const listOneHero = (id) => {
   return hero;
 }
 
-
-const createHero = ({ nombre, img }) => {
-  const heroe = { id: nextId, nombre, img }
+const createHero = (datos) => {
+  const heroe = { id: nextId, ...datos }
   lista.push(heroe);
   nextId++
   return heroe
 }
-
 
 const editHero = (id, changes) => {
   const indexHero = lista.findIndex(hero => hero.id === +id);
@@ -50,7 +48,6 @@ const deleteHero = (id) => {
   lista.splice(indexHero, 1)
   return ({ mensaje: 'Libro eliminado' })
 }
-
 
 module.exports = {
   listAll, listOneHero, createHero, editHero, deleteHero
