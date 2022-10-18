@@ -1,10 +1,4 @@
-const fs = require('fs')
-
-const lista = [
-  { id: 1, nombre: "SuperMan", img: "superman.png" },
-  { id: 2, nombre: "Shazam", img: "shazam.jpg" },
-];
-let nextId = 3;
+const heroeModel = require('../models/heroeModels')
 
 const listAll = () => {
   return lista;
